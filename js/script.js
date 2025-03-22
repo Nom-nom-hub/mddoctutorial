@@ -46,6 +46,33 @@ function hello() {
             });
         });
     });
+    
+    // Mobile menu toggle functionality
+    const mobileMenu = document.getElementById('mobile-menu');
+    const navLinks = document.querySelector('.nav-links');
+    
+    mobileMenu.addEventListener('click', function() {
+        navLinks.classList.toggle('active');
+    });
+    
+    // Check if we're on mobile and adjust the playground height
+    function adjustPlaygroundHeight() {
+        const isMobile = window.innerWidth <= 768;
+        const markdownInput = document.getElementById('markdown-input');
+        const markdownOutput = document.getElementById('markdown-output');
+        
+        if (isMobile) {
+            markdownInput.style.height = '200px';
+            markdownOutput.style.height = '300px';
+        } else {
+            markdownInput.style.height = '';
+            markdownOutput.style.height = '';
+        }
+    }
+    
+    // Run on load and resize
+    adjustPlaygroundHeight();
+    window.addEventListener('resize', adjustPlaygroundHeight);
 });
 
 // Configure marked to enable GitHub Flavored Markdown with dark mode code highlighting

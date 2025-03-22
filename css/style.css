@@ -348,3 +348,85 @@ nav a:hover {
     color: var(--secondary);
     text-decoration: none;
 }
+
+/* Mobile responsiveness improvements */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        padding: 1rem;
+    }
+    
+    nav ul {
+        margin-top: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    nav ul li {
+        margin: 0.5rem;
+    }
+    
+    header {
+        padding: 2rem 1rem;
+        text-align: center;
+    }
+    
+    header h1 {
+        font-size: 1.8rem;
+    }
+    
+    main {
+        padding: 1rem;
+    }
+    
+    .tutorial-card {
+        padding: 1rem;
+    }
+    
+    .example {
+        flex-direction: column;
+    }
+    
+    .markdown, .output {
+        width: 100%;
+    }
+    
+    .playground-container {
+        flex-direction: column;
+        height: auto;
+    }
+    
+    #markdown-input, #markdown-output {
+        width: 100%;
+        min-height: 200px;
+    }
+    
+    pre {
+        max-width: 100%;
+        overflow-x: auto;
+    }
+    
+    .cta-button {
+        padding: 10px 20px;
+        font-size: 1rem;
+    }
+}
+
+/* Small mobile devices */
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.5rem;
+    }
+    
+    h2 {
+        font-size: 1.3rem;
+    }
+    
+    h3 {
+        font-size: 1.1rem;
+    }
+    
+    .logo {
+        font-size: 1.3rem;
+    }
+}
