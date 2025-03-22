@@ -1,4 +1,12 @@
+// Remove any conflicting JavaScript for the button
 document.addEventListener('DOMContentLoaded', function() {
+    // Clear any existing handlers that might interfere
+    const ctaButton = document.querySelector('.cta-button');
+    if (ctaButton) {
+        const newButton = ctaButton.cloneNode(true);
+        ctaButton.parentNode.replaceChild(newButton, ctaButton);
+    }
+    
     const markdownInput = document.getElementById('markdown-input');
     const markdownOutput = document.getElementById('markdown-output');
     
@@ -73,6 +81,68 @@ function hello() {
     // Run on load and resize
     adjustPlaygroundHeight();
     window.addEventListener('resize', adjustPlaygroundHeight);
+    
+    // Fix Try It Now button and all anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+            
+            if (targetElement) {
+                window.scrollTo({
+                    top: targetElement.offsetTop - 70,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+    
+    // Try It Now button functionality
+    const tryItNowBtn = document.getElementById('try-it-now-btn');
+    if (tryItNowBtn) {
+        tryItNowBtn.addEventListener('click', function() {
+            const playground = document.getElementById('playground');
+            if (playground) {
+                const offsetTop = playground.getBoundingClientRect().top + window.pageYOffset - 70;
+                window.scrollTo({
+                    top: offsetTop,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    }
+    
+    // Add cheatsheet download functionality
+    const downloadBtn = document.getElementById('download-cheatsheet');
+    if (downloadBtn) {
+        downloadBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            alert('Cheatsheet download would start here. In a real implementation, this would download a PDF.');
+            // In a real implementation, you would link to an actual PDF file
+            // window.location.href = 'downloads/markdown-cheatsheet.pdf';
+        });
+    }
+    
+    // Add navigation link for new sections
+    const navList = document.querySelector('nav ul');
+    if (navList) {
+        // Add cheatsheet link
+        const cheatsheetLi = document.createElement('li');
+        const cheatsheetLink = document.createElement('a');
+        cheatsheetLink.href = '#cheatsheet';
+        cheatsheetLink.innerHTML = '<i class="fas fa-file-alt"></i> Cheatsheet';
+        cheatsheetLi.appendChild(cheatsheetLink);
+        navList.appendChild(cheatsheetLi);
+        
+        // Add resources link
+        const resourcesLi = document.createElement('li');
+        const resourcesLink = document.createElement('a');
+        resourcesLink.href = '#resources';
+        resourcesLink.innerHTML = '<i class="fas fa-link"></i> Resources';
+        resourcesLi.appendChild(resourcesLink);
+        navList.appendChild(resourcesLi);
+    }
 });
 
 // Configure marked to enable GitHub Flavored Markdown with dark mode code highlighting

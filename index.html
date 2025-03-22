@@ -23,7 +23,7 @@
     <header>
         <h1>Breeze3's Markdown Mastery</h1>
         <p>A personalized guide to writing and formatting with Markdown</p>
-        <button class="cta-button" onclick="document.getElementById('playground').scrollIntoView({behavior: 'smooth'})">Try It Now <i class="fas fa-arrow-right"></i></button>
+        <a href="#playground" class="cta-button" style="display: inline-block; text-decoration: none;">Try It Now <i class="fas fa-arrow-right"></i></a>
     </header>
 
     <main>
@@ -469,6 +469,152 @@ https://github.com
             <div class="playground-container">
                 <textarea id="markdown-input" placeholder="Write your Markdown here..."></textarea>
                 <div id="markdown-output"></div>
+            </div>
+        </section>
+
+        <section id="cheatsheet">
+            <h2>Markdown Cheatsheet</h2>
+            <div class="tutorial-card">
+                <p>Quick reference guide for common Markdown syntax:</p>
+                <div class="cheatsheet-grid">
+                    <div class="cheat-item">
+                        <code># Heading</code>
+                        <span>→</span>
+                        <span>Heading 1</span>
+                    </div>
+                    <div class="cheat-item">
+                        <code>**Bold**</code>
+                        <span>→</span>
+                        <span><strong>Bold</strong></span>
+                    </div>
+                    <div class="cheat-item">
+                        <code>*Italic*</code>
+                        <span>→</span>
+                        <span><em>Italic</em></span>
+                    </div>
+                    <div class="cheat-item">
+                        <code>[Link](url)</code>
+                        <span>→</span>
+                        <span><a href="#">Link</a></span>
+                    </div>
+                    <div class="cheat-item">
+                        <code>![Alt](image-url)</code>
+                        <span>→</span>
+                        <span>Image</span>
+                    </div>
+                    <div class="cheat-item">
+                        <code>- List item</code>
+                        <span>→</span>
+                        <span>• List item</span>
+                    </div>
+                    <div class="cheat-item">
+                        <code>1. Numbered</code>
+                        <span>→</span>
+                        <span>1. Numbered</span>
+                    </div>
+                    <div class="cheat-item">
+                        <code>```code```</code>
+                        <span>→</span>
+                        <span><code>code block</code></span>
+                    </div>
+                    <div class="cheat-item">
+                        <code>> Quote</code>
+                        <span>→</span>
+                        <span>Blockquote</span>
+                    </div>
+                    <div class="cheat-item">
+                        <code>---</code>
+                        <span>→</span>
+                        <span>Horizontal line</span>
+                    </div>
+                </div>
+                <a href="#" id="download-cheatsheet" class="secondary-button">Download Cheatsheet PDF</a>
+            </div>
+        </section>
+
+        <section id="resources">
+            <h2>Helpful Resources</h2>
+            <div class="resource-cards">
+                <div class="resource-card">
+                    <i class="fas fa-book"></i>
+                    <h3>Official Markdown Guide</h3>
+                    <p>Comprehensive documentation on all Markdown syntax</p>
+                    <a href="https://www.markdownguide.org/" target="_blank">Visit Site</a>
+                </div>
+                <div class="resource-card">
+                    <i class="fas fa-laptop-code"></i>
+                    <h3>Dillinger</h3>
+                    <p>Online Markdown editor with live preview</p>
+                    <a href="https://dillinger.io/" target="_blank">Try Editor</a>
+                </div>
+                <div class="resource-card">
+                    <i class="fab fa-github"></i>
+                    <h3>GitHub Markdown</h3>
+                    <p>GitHub's Markdown syntax documentation</p>
+                    <a href="https://docs.github.com/en/github/writing-on-github" target="_blank">Learn More</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="examples">
+            <h2>Real-World Examples</h2>
+            <div class="tutorial-card">
+                <h3>README.md for a Project</h3>
+                <div class="example">
+                    <div class="markdown">
+<pre><code class="language-markdown"># Project Name
+
+![License](https://img.shields.io/badge/license-MIT-blue.svg)
+
+A brief description of what this project does.
+
+## Installation
+
+```bash
+npm install my-project
+```
+
+## Usage
+
+```javascript
+import { myFunction } from 'my-project';
+
+// Example usage
+myFunction();
+```
+
+## Features
+
+- Feature 1
+- Feature 2
+- Feature 3
+
+## Contributing
+
+Pull requests are welcome!
+</code></pre>
+                    </div>
+                    <div class="output">
+                        <h1>Project Name</h1>
+                        <p><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="License"></p>
+                        <p>A brief description of what this project does.</p>
+                        <h2>Installation</h2>
+                        <pre><code class="language-bash">npm install my-project</code></pre>
+                        <h2>Usage</h2>
+                        <pre><code class="language-javascript">import { myFunction } from 'my-project';
+
+// Example usage
+myFunction();</code></pre>
+                        <h2>Features</h2>
+                        <ul>
+                            <li>Feature 1</li>
+                            <li>Feature 2</li>
+                            <li>Feature 3</li>
+                        </ul>
+                        <h2>Contributing</h2>
+                        <p>Pull requests are welcome!</p>
+                    </div>
+                </div>
             </div>
         </section>
     </main>

@@ -309,23 +309,32 @@ summary:hover {
 }
 
 .cta-button {
-    background-color: var(--accent);
-    color: white;
+    display: inline-block !important;
+    background: var(--accent);
+    color: white !important;
+    padding: 12px 30px;
     border: none;
-    padding: 12px 28px;
-    border-radius: 30px;
+    border-radius: 50px;
     font-size: 1.1rem;
     font-weight: 600;
-    margin-top: 20px;
     cursor: pointer;
     transition: all 0.3s;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+    text-decoration: none !important;
+    margin-top: 1.5rem;
+    position: relative;
+    z-index: 999;
+    pointer-events: auto !important;
 }
 
 .cta-button:hover {
-    background-color: #ff5252;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+    background: #ff8787;
+    transform: translateY(-3px);
+    box-shadow: 0 7px 20px rgba(255, 107, 107, 0.4);
+}
+
+.cta-button:active {
+    transform: translateY(1px);
 }
 
 a {
@@ -428,5 +437,103 @@ nav a:hover {
     
     .logo {
         font-size: 1.3rem;
+    }
+}
+
+/* Cheatsheet styles */
+.cheatsheet-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1rem;
+    margin: 1.5rem 0;
+}
+
+.cheat-item {
+    display: flex;
+    align-items: center;
+    background: var(--card-bg);
+    padding: 0.75rem;
+    border-radius: 6px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.cheat-item code {
+    background: var(--dark);
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    margin-right: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.cheat-item span {
+    margin: 0 0.5rem;
+}
+
+.secondary-button {
+    display: inline-block;
+    background: var(--secondary);
+    color: white;
+    padding: 8px 20px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 500;
+    margin-top: 1rem;
+    transition: all 0.3s;
+}
+
+.secondary-button:hover {
+    background: #6c5ce7;
+    transform: translateY(-2px);
+}
+
+/* Resource cards */
+.resource-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin: 1.5rem 0;
+}
+
+.resource-card {
+    background: var(--card-bg);
+    border-radius: 10px;
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s;
+}
+
+.resource-card:hover {
+    transform: translateY(-5px);
+}
+
+.resource-card i {
+    font-size: 2.5rem;
+    color: var(--primary);
+    margin-bottom: 1rem;
+}
+
+.resource-card a {
+    display: inline-block;
+    margin-top: 1rem;
+    color: var(--primary);
+    font-weight: 500;
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.3s;
+}
+
+.resource-card a:hover {
+    border-color: var(--primary);
+}
+
+/* Mobile responsiveness for new sections */
+@media (max-width: 768px) {
+    .cheatsheet-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .resource-cards {
+        grid-template-columns: 1fr;
     }
 }
