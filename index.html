@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Markdown Tutorial</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism-tomorrow.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <nav>
+        <div class="logo"><i class="fas fa-markdown"></i> Breeze3's Markdown Guide</div>
+        <ul>
+            <li><a href="#intro"><i class="fas fa-info-circle"></i> Introduction</a></li>
+            <li><a href="#basics"><i class="fas fa-book"></i> Basics</a></li>
+            <li><a href="#advanced"><i class="fas fa-code"></i> Advanced</a></li>
+            <li><a href="#playground"><i class="fas fa-laptop-code"></i> Playground</a></li>
+        </ul>
+    </nav>
+
+    <header>
+        <h1>Breeze3's Markdown Mastery</h1>
+        <p>A personalized guide to writing and formatting with Markdown</p>
+        <button class="cta-button" onclick="document.getElementById('playground').scrollIntoView({behavior: 'smooth'})">Try It Now <i class="fas fa-arrow-right"></i></button>
+    </header>
+
+    <main>
+        <section id="intro">
+            <h2>What is Markdown?</h2>
+            <p>Markdown is a lightweight markup language created by John Gruber in 2004. It allows you to write using an easy-to-read, easy-to-write plain text format, which then converts to valid HTML.</p>
+            <p>Markdown is widely used for:</p>
+            <ul>
+                <li>README files and documentation on GitHub</li>
+                <li>Forum & blog posts</li>
+                <li>Static site generators</li>
+                <li>Note-taking applications</li>
+            </ul>
+        </section>
+
+        <section id="basics">
+            <h2>Markdown Basics</h2>
+            
+            <div class="tutorial-card">
+                <h3>Headers</h3>
+                <div class="example">
+                    <div class="markdown">
+<pre><code class="language-markdown"># Heading 1
+## Heading 2
+### Heading 3
+#### Heading 4
+##### Heading 5
+###### Heading 6</code></pre>
+                    </div>
+                    <div class="output">
+                        <h1 style="margin:0">Heading 1</h1>
+                        <h2 style="margin:0">Heading 2</h2>
+                        <h3 style="margin:0">Heading 3</h3>
+                        <h4 style="margin:0">Heading 4</h4>
+                        <h5 style="margin:0">Heading 5</h5>
+                        <h6 style="margin:0">Heading 6</h6>
+                    </div>
+                </div>
+                <p class="tip">Use headers to organize your content hierarchically.</p>
+            </div>
+
+            <div class="tutorial-card">
+                <h3>Emphasis</h3>
+                <div class="example">
+                    <div class="markdown">
+<pre><code class="language-markdown">*This text will be italic*
+_This will also be italic_
+
+**This text will be bold**
+__This will also be bold__
+
+***Bold and italic***
+**_Also bold and italic_**
+
+~~Strikethrough~~</code></pre>
+                    </div>
+                    <div class="output">
+                        <p><em>This text will be italic</em><br>
+                        <em>This will also be italic</em></p>
+                        <p><strong>This text will be bold</strong><br>
+                        <strong>This will also be bold</strong></p>
+                        <p><strong><em>Bold and italic</em></strong><br>
+                        <strong><em>Also bold and italic</em></strong></p>
+                        <p><del>Strikethrough</del></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tutorial-card">
+                <h3>Lists</h3>
+                <div class="example">
+                    <div class="markdown">
+<pre><code class="language-markdown">### Unordered Lists
+- Item 1
+- Item 2
+  - Nested item 2.1
+  - Nested item 2.2
+- Item 3
+
+### Ordered Lists
+1. First item
+2. Second item
+   1. Nested item 2.1
+   2. Nested item 2.2
+3. Third item</code></pre>
+                    </div>
+                    <div class="output">
+                        <h3>Unordered Lists</h3>
+                        <ul>
+                            <li>Item 1</li>
+                            <li>Item 2
+                                <ul>
+                                    <li>Nested item 2.1</li>
+                                    <li>Nested item 2.2</li>
+                                </ul>
+                            </li>
+                            <li>Item 3</li>
+                        </ul>
+                        
+                        <h3>Ordered Lists</h3>
+                        <ol>
+                            <li>First item</li>
+                            <li>Second item
+                                <ol>
+                                    <li>Nested item 2.1</li>
+                                    <li>Nested item 2.2</li>
+                                </ol>
+                            </li>
+                            <li>Third item</li>
+                        </ol>
+                    </div>
+                </div>
+                <p class="tip">Use indentation (2 spaces) to create nested lists.</p>
+            </div>
+
+            <div class="tutorial-card">
+                <h3>Links and Images</h3>
+                <div class="example">
+                    <div class="markdown">
+<pre><code class="language-markdown">### Links
+[Basic link](https://www.example.com)
+[Link with title](https://www.example.com "Example Website")
+[Reference link][ref]
+
+[ref]: https://www.example.com
+
+### Images
+![Alt text](https://via.placeholder.com/150)
+![Alt text](https://via.placeholder.com/150 "Image title")
+[![Clickable image](https://via.placeholder.com/150)](https://example.com)</code></pre>
+                    </div>
+                    <div class="output">
+                        <h3>Links</h3>
+                        <p><a href="https://www.example.com">Basic link</a><br>
+                        <a href="https://www.example.com" title="Example Website">Link with title</a><br>
+                        <a href="https://www.example.com">Reference link</a></p>
+                        
+                        <h3>Images</h3>
+                        <p><img src="https://via.placeholder.com/150" alt="Alt text"><br>
+                        <img src="https://via.placeholder.com/150" alt="Alt text" title="Image title"><br>
+                        <a href="https://example.com"><img src="https://via.placeholder.com/150" alt="Clickable image"></a></p>
+                    </div>
+                </div>
+                <p class="tip">Images are similar to links but start with an exclamation mark.</p>
+            </div>
+
+            <div class="tutorial-card">
+                <h3>Code</h3>
+                <div class="example">
+                    <div class="markdown">
+<pre><code class="language-markdown">### Inline Code
+Use `code` in your text.
+
+### Code Blocks
+```
+// Code block without syntax highlighting
+function test() {
+  console.log("notice the blank line before this function?");
+}
+```
+
+```javascript
+// Code block with syntax highlighting
+function test() {
+  console.log("language specified!");
+}
+```</code></pre>
+                    </div>
+                    <div class="output">
+                        <h3>Inline Code</h3>
+                        <p>Use <code>code</code> in your text.</p>
+                        
+                        <h3>Code Blocks</h3>
+                        <pre><code>// Code block without syntax highlighting
+function test() {
+  console.log("notice the blank line before this function?");
+}</code></pre>
+                        
+                        <pre><code class="language-javascript">// Code block with syntax highlighting
+function test() {
+  console.log("language specified!");
+}</code></pre>
+                    </div>
+                </div>
+                <p class="tip">Specify a language after the opening backticks for syntax highlighting.</p>
+            </div>
+
+            <div class="tutorial-card">
+                <h3>Blockquotes</h3>
+                <div class="example">
+                    <div class="markdown">
+<pre><code class="language-markdown">### Basic Blockquote
+> This is a blockquote
+> It can span multiple lines
+
+### Nested Blockquotes
+> This is a blockquote
+>> This is a nested blockquote
+> Back to the first level
+
+### Blockquotes with other elements
+> #### Header in blockquote
+> 
+> - List in blockquote
+> - Another item
+>
+> **Bold text** in blockquote</code></pre>
+                    </div>
+                    <div class="output">
+                        <h3>Basic Blockquote</h3>
+                        <blockquote>
+                            <p>This is a blockquote<br>It can span multiple lines</p>
+                        </blockquote>
+                        
+                        <h3>Nested Blockquotes</h3>
+                        <blockquote>
+                            <p>This is a blockquote</p>
+                            <blockquote>
+                                <p>This is a nested blockquote</p>
+                            </blockquote>
+                            <p>Back to the first level</p>
+                        </blockquote>
+                        
+                        <h3>Blockquotes with other elements</h3>
+                        <blockquote>
+                            <h4>Header in blockquote</h4>
+                            <ul>
+                                <li>List in blockquote</li>
+                                <li>Another item</li>
+                            </ul>
+                            <p><strong>Bold text</strong> in blockquote</p>
+                        </blockquote>
+                    </div>
+                </div>
+                <p class="tip">Blockquotes are great for highlighting quotes or important information.</p>
+            </div>
+        </section>
+
+        <!-- Add a new section for advanced Markdown features -->
+        <section id="advanced">
+            <h2>Advanced Markdown</h2>
+            
+            <div class="tutorial-card">
+                <h3>Tables</h3>
+                <div class="example">
+                    <div class="markdown">
+<pre><code class="language-markdown">| Header 1 | Header 2 | Header 3 |
+|----------|----------|----------|
+| Cell 1   | Cell 2   | Cell 3   |
+| Cell 4   | Cell 5   | Cell 6   |
+
+| Left-aligned | Center-aligned | Right-aligned |
+|:-------------|:-------------:|-------------:|
+| Left         | Center        | Right        |
+| Text         | Text          | Text         |</code></pre>
+                    </div>
+                    <div class="output">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Header 1</th>
+                                    <th>Header 2</th>
+                                    <th>Header 3</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Cell 1</td>
+                                    <td>Cell 2</td>
+                                    <td>Cell 3</td>
+                                </tr>
+                                <tr>
+                                    <td>Cell 4</td>
+                                    <td>Cell 5</td>
+                                    <td>Cell 6</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <br>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th style="text-align:left">Left-aligned</th>
+                                    <th style="text-align:center">Center-aligned</th>
+                                    <th style="text-align:right">Right-aligned</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td style="text-align:left">Left</td>
+                                    <td style="text-align:center">Center</td>
+                                    <td style="text-align:right">Right</td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align:left">Text</td>
+                                    <td style="text-align:center">Text</td>
+                                    <td style="text-align:right">Text</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <p class="tip">Use colons in the separator line to control column alignment.</p>
+            </div>
+
+            <div class="tutorial-card">
+                <h3>Task Lists</h3>
+                <div class="example">
+                    <div class="markdown">
+<pre><code class="language-markdown">### Task List
+- [x] Completed task
+- [ ] Incomplete task
+- [x] Task with **formatting**
+- [ ] Another task</code></pre>
+                    </div>
+                    <div class="output">
+                        <h3>Task List</h3>
+                        <ul class="task-list">
+                            <li><input type="checkbox" checked disabled> Completed task</li>
+                            <li><input type="checkbox" disabled> Incomplete task</li>
+                            <li><input type="checkbox" checked disabled> Task with <strong>formatting</strong></li>
+                            <li><input type="checkbox" disabled> Another task</li>
+                        </ul>
+                    </div>
+                </div>
+                <p class="tip">Task lists are especially useful in GitHub issues and pull requests.</p>
+            </div>
+
+            <div class="tutorial-card">
+                <h3>Horizontal Rules</h3>
+                <div class="example">
+                    <div class="markdown">
+<pre><code class="language-markdown">Three or more hyphens:
+
+---
+
+Three or more asterisks:
+
+***
+
+Three or more underscores:
+
+___</code></pre>
+                    </div>
+                    <div class="output">
+                        <p>Three or more hyphens:</p>
+                        <hr>
+                        <p>Three or more asterisks:</p>
+                        <hr>
+                        <p>Three or more underscores:</p>
+                        <hr>
+                    </div>
+                </div>
+                <p class="tip">Horizontal rules help visually separate content sections.</p>
+            </div>
+
+            <div class="tutorial-card">
+                <h3>HTML in Markdown</h3>
+                <div class="example">
+                    <div class="markdown">
+<pre><code class="language-markdown">### Using HTML tags
+<div style="color: blue; font-size: 18px;">
+  This is styled with HTML
+</div>
+
+<details>
+  <summary>Click to expand</summary>
+  Hidden content revealed on click!
+</details>
+
+### Limitations
+<p style="color: red;">
+  Some Markdown processors may restrict HTML
+</p></code></pre>
+                    </div>
+                    <div class="output">
+                        <h3>Using HTML tags</h3>
+                        <div style="color: blue; font-size: 18px;">
+                          This is styled with HTML
+                        </div>
+                        <br>
+                        <details>
+                          <summary>Click to expand</summary>
+                          Hidden content revealed on click!
+                        </details>
+                        
+                        <h3>Limitations</h3>
+                        <p style="color: red;">
+                          Some Markdown processors may restrict HTML
+                        </p>
+                    </div>
+                </div>
+                <p class="tip">HTML gives you more formatting options, but may not work in all Markdown processors.</p>
+            </div>
+
+            <div class="tutorial-card">
+                <h3>GitHub Flavored Markdown</h3>
+                <div class="example">
+                    <div class="markdown">
+<pre><code class="language-markdown">### GitHub-specific features
+
+#### Username mentions
+@username
+
+#### Issue/PR references
+#123
+
+#### Automatic links
+https://github.com
+
+#### Emoji
+:smile: :heart: :rocket:
+
+#### Strikethrough
+~~Strikethrough text~~</code></pre>
+                    </div>
+                    <div class="output">
+                        <h3>GitHub-specific features</h3>
+                        
+                        <h4>Username mentions</h4>
+                        <p><a href="#">@username</a></p>
+                        
+                        <h4>Issue/PR references</h4>
+                        <p><a href="#">#123</a></p>
+                        
+                        <h4>Automatic links</h4>
+                        <p><a href="https://github.com">https://github.com</a></p>
+                        
+                        <h4>Emoji</h4>
+                        <p>😄 ❤️ 🚀</p>
+                        
+                        <h4>Strikethrough</h4>
+                        <p><del>Strikethrough text</del></p>
+                    </div>
+                </div>
+                <p class="tip">GitHub Flavored Markdown adds useful features for collaboration and documentation.</p>
+            </div>
+        </section>
+
+        <section id="playground">
+            <h2>Markdown Playground</h2>
+            <p>Try writing Markdown in the editor below and see the live preview:</p>
+            <div class="playground-container">
+                <textarea id="markdown-input" placeholder="Write your Markdown here..."></textarea>
+                <div id="markdown-output"></div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Created with ❤️ for Breeze3</p>
+        <p>© 2025 Breeze3's Markdown Tutorial</p>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/4.0.2/marked.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
